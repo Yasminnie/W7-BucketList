@@ -16,8 +16,7 @@ public class BucketAdapter extends RecyclerView.Adapter<BucketAdapter.ViewHolder
 	private LayoutInflater mInflater;
 	private ItemClickListener mClickListener;
 
-	public BucketAdapter(Context context, List<Bucket> bucketData, ItemClickListener mClickListener) {
-		this.mInflater = LayoutInflater.from(context);
+	public BucketAdapter(List<Bucket> bucketData, ItemClickListener mClickListener) {
 		this.bucketData = bucketData;
 		this.mClickListener = mClickListener;
 	}
@@ -25,7 +24,10 @@ public class BucketAdapter extends RecyclerView.Adapter<BucketAdapter.ViewHolder
 	@NonNull
 	@Override
 	public BucketAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-		View view = mInflater.inflate(R.layout.list_item, parent, false);
+		Context context = parent.getContext();
+		LayoutInflater inflater = LayoutInflater.from(context);
+
+		View view = inflater.inflate(R.layout.list_item, parent, false);
 		return new ViewHolder(view);
 	}
 
@@ -40,11 +42,6 @@ public class BucketAdapter extends RecyclerView.Adapter<BucketAdapter.ViewHolder
 	@Override
 	public int getItemCount() {
 		return bucketData.size();
-	}
-
-	public void setBucketData(List<Bucket> bucketData) {
-		this.bucketData = bucketData;
-		notifyDataSetChanged(); // zegt tegen UI dat je items kan updaten in recyclerview
 	}
 
 	class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -63,8 +60,15 @@ public class BucketAdapter extends RecyclerView.Adapter<BucketAdapter.ViewHolder
 //			hier komt iets voor de checkbox
 		}
 	}
-	
+
+	public void swapList (List<Bucket> newList) {
+		bucketData = newList;
+		if (newList != null) {
+			this.notifyDataSetChanged();
+		}
+	}
+
 	public interface ItemClickListener {
-		void onItemClick(View view, int position) throws ExecutionException, InterruptedException;
+		void bucketItemOnClick (int i);
 	}
 }

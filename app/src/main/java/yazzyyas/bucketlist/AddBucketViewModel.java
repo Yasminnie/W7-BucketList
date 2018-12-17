@@ -6,17 +6,17 @@ import android.content.Context;
 
 import java.util.List;
 
-public class MainViewModel extends ViewModel {
+public class AddBucketViewModel extends ViewModel {
 
 	private BucketRepository bucketRepository;
 	private LiveData<List<Bucket>> buckets;
 
-	public MainViewModel(Context context) {
+	public AddBucketViewModel(Context context) {
 		bucketRepository = new BucketRepository(context);
 		buckets = bucketRepository.getAllBuckets();
 	}
 
-	public LiveData<List<Bucket>> getReminders() {
+	public LiveData<List<Bucket>> getBuckets() {
 		return buckets;
 	}
 

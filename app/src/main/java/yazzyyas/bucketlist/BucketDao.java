@@ -17,13 +17,13 @@ public interface BucketDao {
 	public LiveData<List<Bucket>> getAllBuckets();
 
 	@Insert
-	public void insertReminders(Bucket buckets);
+	public void insertBuckets(Bucket buckets);
 
 
 	@Delete
-	public void deleteReminders(Bucket buckets);
+	public void deleteBuckets(Bucket buckets);
 
 
 	@Update
-	public void updateReminders(Bucket buckets);
+	public void updateBuckets(Bucket buckets);
 }

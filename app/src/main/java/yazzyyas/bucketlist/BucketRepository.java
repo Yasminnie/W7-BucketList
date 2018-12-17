@@ -28,7 +28,7 @@ public class BucketRepository {
 		mExecutor.execute(new Runnable() {
 			@Override
 			public void run() {
-				bucketDao.insertReminders(bucket);
+				bucketDao.insertBuckets(bucket);
 			}
 		});
 	}
@@ -37,7 +37,7 @@ public class BucketRepository {
 		mExecutor.execute(new Runnable() {
 			@Override
 			public void run() {
-				bucketDao.updateReminders(bucket);
+				bucketDao.updateBuckets(bucket);
 			}
 		});
 	}
@@ -46,7 +46,7 @@ public class BucketRepository {
 		mExecutor.execute(new Runnable() {
 			@Override
 			public void run() {
-				bucketDao.deleteReminders(bucket);
+				bucketDao.deleteBuckets(bucket);
 			}
 		});
 	}
