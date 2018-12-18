@@ -32,7 +32,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="12sp"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="47dp"
             app:layout_constraintBottom_toTopOf="@+id/bucketText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

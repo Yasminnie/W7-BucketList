@@ -8,7 +8,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 import android.widget.EditText;
 
@@ -56,23 +55,6 @@ public class MainActivity extends AppCompatActivity implements BucketAdapter.Ite
 				startActivityForResult(intent, REQUESTCODE);
 			}
 		});
-
-		ItemTouchHelper.SimpleCallback simpleItemTouchCallback =
-				new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-					@Override
-					public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder
-							target) {
-						return false;
-					}
-
-					//Called when a user swipes left or right on a ViewHolder
-					@Override
-					public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
-						//Get the index corresponding to the selected position
-						int position = (viewHolder.getAdapterPosition());
-						mAddBucketViewModel.delete(buckets.get(position));
-					}
-				};
 	}
 
 	private void updateUI() {
@@ -95,11 +77,12 @@ public class MainActivity extends AppCompatActivity implements BucketAdapter.Ite
 	}
 
 	@Override
-	public void onPointerCaptureChanged(boolean hasCapture) {
+	public void bucketItemOnClick(int i) {
 
 	}
 
 	@Override
-	public void bucketItemOnClick(int i) {
+	public void onPointerCaptureChanged(boolean hasCapture) {
+
 	}
 }
