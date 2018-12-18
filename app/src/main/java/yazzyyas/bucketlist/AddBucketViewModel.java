@@ -31,5 +31,4 @@ public class AddBucketViewModel extends ViewModel {
 	public void delete(Bucket bucket) {
 		bucketRepository.delete(bucket);
 	}
-
 }

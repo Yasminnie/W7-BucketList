@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -15,7 +14,6 @@ import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity implements BucketAdapter.ItemClickListener {
 
@@ -30,7 +28,6 @@ public class MainActivity extends AppCompatActivity implements BucketAdapter.Ite
 	//Constants used when calling the update activity
 	public static final String EXTRA_BUCKET = "Bucket";
 	public static final int REQUESTCODE = 1234;
-	private int mModifyPosition;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +101,5 @@ public class MainActivity extends AppCompatActivity implements BucketAdapter.Ite
 
 	@Override
 	public void bucketItemOnClick(int i) {
-//		buckets.get(i).
 	}
 }

@@ -17,6 +17,17 @@ public class Bucket implements Parcelable {
 	@ColumnInfo(name = "bucketText")
 	private String bucketText;
 
+	@ColumnInfo(name = "checked")
+	private boolean isChecked;
+
+	public boolean getChecked() {
+		return isChecked;
+	}
+
+	public void setChecked(boolean checked) {
+		isChecked = checked;
+	}
+
 	public Bucket(String bucketTitle, String bucketText) {
 		this.bucketTitle = bucketTitle;
 		this.bucketText = bucketText;

@@ -10,7 +10,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
 	public abstract BucketDao bucketDao();
 
-	private final static String NAME_DATABASE = "bucketList_db";
+	private final static String NAME_DATABASE = "bucketList";
 	private static AppDatabase sInstance;
 
 	public static AppDatabase getInstance(Context context) {
